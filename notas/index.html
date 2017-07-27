@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+		<title>Angular demo</title>
+	</head>
+	<body>
+		<div ng-app="app">
+
+			<div ng-controller="notesController as notes">
+
+				<h1>{{ notes.service.name }}</h1>
+
+				<div>
+					<button ng-repeat="n in [] | range:notes.service.evals" ng-click="notes.setActive(n)">EV {{ n + 1 }}</button>
+				</div>
+
+				<div>
+					<label>Angular</label>
+					<input type="text" ng-model="notes.service.data[notes.active].angular">
+
+					<label>JS</label>
+					<input type="text" ng-model="notes.service.data[notes.active].js">
+
+					<label>CSS</label>
+					<input type="text" ng-model="notes.service.data[notes.active].css">
+				</div>
+
+			</div>
+
+			<div ng-controller="finalController as final">				
+				{{ final.result }}
+				<button ng-click="final.calculate()">Calculate</button>
+			</div>
+
+			<hr />
+
+			<div ng-controller="coursesController as course">
+				<input type="text" ng-model="course.newCourse.name">
+				<input type="text" ng-model="course.newCourse.evals">
+
+				<button ng-click="course.add()">Add</button>
+
+				<ul>
+					<li ng-repeat="item in course.courses.data track by $index">
+						{{ item.name }} ({{ item.evals}} Evaluaciones)
+
+						<button ng-click="course.view($index)">View</button>
+					</li>
+				</ul>
+			</div>
+
+
+		</div>	
+		<!-- Stuff here -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+		<!-- App -->
+		<script type="text/javascript" src="js/app.js"></script>
+
+		<!-- Services -->
+		<script type="text/javascript" src="services/notes.js"></script>
+		<script type="text/javascript" src="services/courses.js"></script>
+
+		<!-- Controllers -->
+		<script type="text/javascript" src="controllers/notes.js"></script>
+		<script type="text/javascript" src="controllers/final.js"></script>
+		<script type="text/javascript" src="controllers/courses.js"></script>
+
+		<!-- Filters -->
+		<script type="text/javascript" src="filters/range.js"></script>
+	</body>
+</html>
