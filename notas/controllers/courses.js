@@ -40,6 +40,8 @@
 				notes.name = courses.data[id].name;
 				notes.evals = courses.data[id].evals;
 
+				
+
 			}
 
 		}

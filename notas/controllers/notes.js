@@ -3,7 +3,7 @@
 	angular.module('app')
 		.controller('notesController', notesController);
 
-		function notesController(notes) {
+		function notesController(notes, courses) {
 
 			var self = this;
 
@@ -15,6 +15,8 @@
 
 			// Methods
 			self.setActive = setActive; 
+			self.save = courses.save;
+			self.format = format;
 
 
 			// Js action code
@@ -26,5 +28,10 @@
 			function setActive(active) {
 				self.active = active;
 			}
+
+			function format(field){
+				notes.data[self.active][field] = notes.data[self.active][field].replace(',','.');
+			}
+
 		}
 })();

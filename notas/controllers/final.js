@@ -27,9 +27,9 @@
 				clear();
 
 				for(i = 0; i < notes.data.length; i++) {
-					self.result.angular += Number(notes.data[i].angular);
-					self.result.js += Number(notes.data[i].js);
-					self.result.css += Number(notes.data[i].css);
+					self.result.angular += Number(notes.data[i].angular.replace(',', '.'));
+					self.result.js += Number(notes.data[i].js.replace(',', '.'));
+					self.result.css += Number(notes.data[i].css.replace(',', '.'));
 				}
 			}
 

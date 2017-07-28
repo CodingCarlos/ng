@@ -9,7 +9,7 @@
 	<body>
 		<div ng-app="app">
 
-			<div ng-controller="notesController as notes">
+			<div ng-controller="notesController as notes" ng-show="notes.service.name">
 
 				<h1>{{ notes.service.name }}</h1>
 
@@ -19,23 +19,25 @@
 
 				<div>
 					<label>Angular</label>
-					<input type="text" ng-model="notes.service.data[notes.active].angular">
+					<input type="text" ng-model="notes.service.data[notes.active].angular" ng-keyup="notes.format('angular')">
 
 					<label>JS</label>
-					<input type="text" ng-model="notes.service.data[notes.active].js">
+					<input type="text" ng-model="notes.service.data[notes.active].js" ng-keyup="notes.format('js')">
 
 					<label>CSS</label>
-					<input type="text" ng-model="notes.service.data[notes.active].css">
+					<input type="text" ng-model="notes.service.data[notes.active].css" ng-keyup="notes.format('css')">
+				</div>
+
+				<hr />
+
+				<button ng-click="notes.save(notes.service)">Save</button>
+
+				<div ng-controller="finalController as final">				
+				{{ final.result }}
+					<button ng-click="final.calculate()">Calculate</button>
 				</div>
 
 			</div>
-
-			<div ng-controller="finalController as final">				
-				{{ final.result }}
-				<button ng-click="final.calculate()">Calculate</button>
-			</div>
-
-			<hr />
 
 			<div ng-controller="coursesController as course">
 				<input type="text" ng-model="course.newCourse.name">
@@ -55,6 +57,9 @@
 
 		</div>	
 		<!-- Stuff here -->
+		<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+
+		<!-- Angular -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 
 		<!-- App -->
