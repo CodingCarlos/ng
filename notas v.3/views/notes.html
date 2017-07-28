@@ -1,0 +1,34 @@
+<div ng-controller="notesController as notes">
+
+	<h1>{{ notes.service.name || notes.error }}</h1>
+
+	<div ng-show="notes.service.name">
+
+		<div>
+			<button ng-repeat="n in [] | range:notes.service.evals" ng-click="notes.setActive(n)">EV {{ n + 1 }}</button>
+		</div>
+
+		<div>
+			<label>Angular</label>
+			<input type="text" ng-model="notes.service.data[notes.active].angular" ng-keyup="notes.format('angular')">
+
+			<label>JS</label>
+			<input type="text" ng-model="notes.service.data[notes.active].js" ng-keyup="notes.format('js')">
+
+			<label>CSS</label>
+			<input type="text" ng-model="notes.service.data[notes.active].css" ng-keyup="notes.format('css')">
+		</div>
+
+		<hr />
+
+		<button ng-click="notes.save(notes.service)">Save</button>
+
+		<div ng-controller="finalController as final">				
+		{{ final.result }}
+			<button ng-click="final.calculate()">Calculate</button>
+		</div>
+	</div>
+
+</div>
+
+<a ui-sref="courses">Back to courses</a>
