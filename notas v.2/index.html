@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+		<title>Courses</title>
+	</head>
+	<body>
+		<div ng-app="app">
+			<div ng-view></div>
+		</div>	
+		<!-- Stuff here -->
+		<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+
+		<!-- Angular -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+		<!-- App -->
+		<script type="text/javascript" src="js/app.js"></script>
+
+		<!-- Services -->
+		<script type="text/javascript" src="services/notes.js"></script>
+		<script type="text/javascript" src="services/courses.js"></script>
+
+		<!-- Controllers -->
+		<script type="text/javascript" src="controllers/notes.js"></script>
+		<script type="text/javascript" src="controllers/final.js"></script>
+		<script type="text/javascript" src="controllers/courses.js"></script>
+
+		<!-- Filters -->
+		<script type="text/javascript" src="filters/range.js"></script>
+	</body>
+</html>

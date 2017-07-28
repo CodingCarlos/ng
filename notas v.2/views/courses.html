@@ -1,0 +1,14 @@
+<div ng-controller="coursesController as course">
+	<input type="text" ng-model="course.newCourse.name">
+	<input type="text" ng-model="course.newCourse.evals">
+
+	<button ng-click="course.add()">Add</button>
+
+	<ul>
+		<li ng-repeat="item in course.courses.data track by $index">
+			{{ item.name }} ({{ item.evals}} Evaluaciones)
+
+			<button ng-click="course.view($index)">View</button>
+		</li>
+	</ul>
+</div>
