@@ -1,0 +1,17 @@
+<div ng-controller="subjectsController as subject">
+	<label>Label</label>
+	<input type="text" ng-model="subject.newSubject.label">
+
+	<label>Nombre</label>
+	<input type="text" ng-model="subject.newSubject.name" ng-keyup="$event.keyCode == 13 && subject.add()">
+
+	<btn ng-click="subject.add()" icon="plus-circle" content="Add Subject" type="info"></btn>
+
+	<ul>
+		<li ng-repeat="item in subject.subjects.data track by $index">
+			{{ item.name }}			
+		</li>
+	</ul>
+
+	<btn ng-if="subject.subjects.data.length != 0" ng-click="subject.viewCourse()" icon="eye" content="View course" type="success"></btn>
+</div>

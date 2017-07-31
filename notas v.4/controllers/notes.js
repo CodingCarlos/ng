@@ -1,14 +1,15 @@
 (function() {
 
 	angular.module('app')
-		.controller('notesController', ['notes', 'courses', '$stateParams', notesController]);
+		.controller('notesController', ['notes', 'courses', '$stateParams', 'subjects', notesController]);
 
-		function notesController(notes, courses, $stateParams) {
+		function notesController(notes, courses, $stateParams, subjects) {
 
 			var self = this;
 
 			// Services
 			self.service = notes;
+			self.subjects = subjects;
 
 			// Properties
 			self.active = 0;

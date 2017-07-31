@@ -9,9 +9,7 @@
 		</div>
 
 		<div>
-			<subject name="angular" label="Angular" eval="notes.active"></subject>
-			<subject name="js" label="JavaScript" eval="notes.active"></subject>
-			<subject name="css" label="CSS" eval="notes.active"></subject>
+			<subject ng-repeat="subject in notes.subjects.data" name="subject.name" label="subject.label" eval="notes.active"></subject>
 		</div>
 
 		<hr />
