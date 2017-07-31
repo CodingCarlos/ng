@@ -11,7 +11,7 @@ Week 3 Milestone
 
 ## New directives
 
-* __[`ng-class`](https://docs.angularjs.org/api/ng/directive/ngClass)__ & CSS Animations.
+* __[`ng-class`](https://docs.angularjs.org/api/ng/directive/ngClass)__ [(check issue)](https://github.com/CodingCarlos/angular-demos/issues/7) & CSS Animations.
 * __[`ng-options`](https://docs.angularjs.org/api/ng/directive/select)__ & __[`ng-value`](https://docs.angularjs.org/api/ng/directive/ngValue)__.
 * __[`ng-touch`](https://docs.angularjs.org/api/ngTouch)__ & [Photo Slider example](http://onehungrymind.com/build-sweet-angularjs-photo-slider-pt-2-ngtouch/).
 
