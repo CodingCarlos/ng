@@ -1,0 +1,60 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3>Formulario de registro</h3>
+	</div>
+  <div class="panel-body">
+	<form name="ValidationForm">
+		<div class="row">
+			<form-control class="col-md-4">
+				<label for="validateName">Nombre</label>
+				<input name="validateName" id="validateName" ng-model="ValidationForm.validateNameValue" type="text" placeholder="Nombre" ng-required="true" class="form-control">
+				<valid-icon></valid-icon>
+				<loader-icon></loader-icon>
+				<error-message class="ng-required">Campo obligatorio</error-message>
+			</form-control>
+
+			<form-control class="col-md-4">
+				<label for="validateMiddleName">Primer apellido</label>
+				<input name="validateMiddleName" id="validateMiddleName" ng-model="ValidationForm.validateMiddleNameValue" type="text" placeholder="Segundo apellido" ng-required="true" class="form-control">
+				<valid-icon></valid-icon>
+				<loader-icon></loader-icon>
+				<error-message class="ng-required">Campo obligatorio</error-message>
+			</form-control>
+
+			<form-control class="col-md-4">
+				<label for="validateLastName">Primer apellido</label>
+				<input name="validateLastName" id="validateLastName" ng-model="ValidationForm.validateLastNameValue" type="text" placeholder="Segundo apellido" ng-required="true" class="form-control">
+				<valid-icon></valid-icon>
+				<loader-icon></loader-icon>
+				<error-message class="ng-required">Campo obligatorio</error-message>
+			</form-control>
+		</div>
+
+		<div class="row">
+			<form-control class="col-md-4">
+				<label for="validatePhone">Teléfono</label>
+				<input name="validatePhone" id="validatePhone" ng-model="ValidationForm.validatePhoneValue" type="number" placeholder="Teléfono" ng-required="true" class="form-control" maxlength="9" minlenght="9">
+				<valid-icon></valid-icon>
+				<loader-icon></loader-icon>
+				<error-message class="ng-required">Campo obligatorio</error-message>
+			</form-control>
+
+			<form-control class="col-md-4">
+				<label for="validateDni">DNI</label>
+				<input name="validateDni" id="validateDni" ng-model="ValidationForm.validateDniValue" type="text" placeholder="DNI" ng-required="true" class="form-control" maxlength="9" minlenght="9" ng-pattern="/[0-9]{7,8}[A-Z]/">
+				<valid-icon></valid-icon>
+				<loader-icon></loader-icon>
+				<error-message class="ng-required">Campo obligatorio</error-message>
+			</form-control>
+
+			<form-control class="col-md-4">
+				<label for="validateBirthday">Fecha de nacimiento</label>
+				<input name="validateBirthday" id="validateBirthday" ng-model="ValidationForm.validateBirthdayValue" type="text" placeholder="Fecha nacimiento" ng-required="true" class="form-control" uib-datepicker-popup >
+				<valid-icon></valid-icon>
+				<loader-icon></loader-icon>
+				<error-message class="ng-required">Campo obligatorio</error-message>
+			</form-control>
+		</div>
+	</form>
+</div>
+</div>
