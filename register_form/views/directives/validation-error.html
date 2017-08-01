@@ -1,0 +1,4 @@
+<span ng-repeat="type in types track by $index" ng-show="field.$error[type]">
+	<span class="label" ng-class="'label-' + (level[type] || level.default)">{{ text[type] || text.default }}</span>
+	<br>
+</span>

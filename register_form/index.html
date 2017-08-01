@@ -7,7 +7,6 @@
 		<title>Form validation</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-		<link rel="stylesheet" href="css/poly-form-validation.css">
 	</head>
 	<body>
 		<div ng-app="app">
@@ -16,14 +15,29 @@
 		<!-- Stuff here -->
 		<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 
 
 		<!-- Angular -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0/angular-ui-router.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
-		<script src="js/poly-form-validation.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.js"></script>
+		<script type="text/javascript" src="js/file-model.js"></script>
+
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+		<script>
+		  var config = {
+		    apiKey: "AIzaSyBzASi-4eqUtRjTRWXl10kBW37phXWHMnw",
+		    authDomain: "angular-form-dfdb7.firebaseapp.com",
+		    databaseURL: "https://angular-form-dfdb7.firebaseio.com",
+		    projectId: "angular-form-dfdb7",
+		    storageBucket: "angular-form-dfdb7.appspot.com",
+		    messagingSenderId: "904690608840"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
 		<!-- App -->
 		<script type="text/javascript" src="js/app.js"></script>
@@ -32,12 +46,14 @@
 		<script type="text/javascript" src="services/service.js"></script>
 
 		<!-- Controllers -->
-		<script type="text/javascript" src="controllers/controller.js"></script>
+		<script type="text/javascript" src="controllers/form.js"></script>
 
 		<!-- Filters -->
 		<script type="text/javascript" src="filters/range.js"></script>
 
 		<!-- Directives -->
 		<script type="text/javascript" src="directives/btn.js"></script>
+		<script type="text/javascript" src="directives/validation-error.js"></script>
+		<script type="text/javascript" src="directives/length-limit.js"></script>
 	</body>
 </html>

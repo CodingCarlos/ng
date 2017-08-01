@@ -1,6 +1,6 @@
 (function () {
 
-	angular.module('app', ['ui.router', 'poly-form-validation']);
+	angular.module('app', ['ui.router', 'ui.bootstrap', 'file-model', 'firebase']);
 
 	angular.module('app').config(['$stateProvider', '$urlRouterProvider', routeConfig]);
 
