@@ -1,0 +1,85 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3>Formulario de registro</h3>
+	</div>
+  <div class="panel-body">
+	<form name="ValidationForm" ng-controller="formController" action="" method="POST">
+		<div class="row form-group">
+			<div class="col-md-4">
+				<label for="validateName">Nombre</label>
+				<input name="validateName" id="validateName" ng-model="ValidationForm.validateNameValue" type="text" placeholder="Nombre" required class="form-control" value="sdfsfd">
+				
+				<validation-error field="ValidationForm.validateName" types="required"></validation-error>
+			</div>
+
+			<div class="col-md-4">
+				<label for="validateLastName">Apellidos</label>
+				<input name="validateLastName" id="validateLastName" ng-model="ValidationForm.validateLastNameValue" type="text" placeholder="Apellidos" ng-required="true" class="form-control">
+				
+				<validation-error field="ValidationForm.validateLastName" types="required"></validation-error>
+			</div>
+
+			<div class="col-md-4">
+				<label for="validateEmail">Email</label>
+				<input name="validateEmail" id="validateEmail" ng-model="ValidationForm.validateEmailValue" type="email" placeholder="Email" ng-required="true" class="form-control">
+				
+				<validation-error field="ValidationForm.validateEmail" types="required email"></validation-error>
+			</div>
+		</div>
+
+		<div class="row form-group">
+			<div class="col-md-4">
+				<label for="validatePhone">Teléfono</label>
+				<input name="validatePhone" id="validatePhone" ng-model="ValidationForm.validatePhoneValue" type="number" placeholder="Teléfono" ng-required="true" class="form-control" length-limit maxlength="9" minlength="9">
+				
+				<validation-error field="ValidationForm.validatePhone" maxlength="9" minlength="9" types="required maxlength minlength"></validation-error>
+			</div>
+
+			<div class="col-md-4">
+				<label for="validateDni">DNI</label>
+				<input name="validateDni" id="validateDni" ng-model="ValidationForm.validateDniValue" type="text" placeholder="DNI" ng-required="true" class="form-control" length-limit maxlength="9" minlength="9" ng-pattern="/[0-9]{7,8}[A-Z]/">
+				
+				<validation-error field="ValidationForm.validateDni" maxlength="9" minlength="9" pattern="DNI" types="required maxlength minlength pattern"></validation-error>
+			</div>
+
+			<div class="col-md-4">
+				<label for="validateAge">Fecha de nacimiento</label>
+				<p class="input-group">
+		          <input type="text" class="form-control" uib-datepicker-popup ng-model="ValidationForm.validateAgeValue" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" id="validateAge" name="validateAge" />
+		          <span class="input-group-btn">
+		            <button type="button" class="btn btn-primary" ng-click="popup2.opened = true"><i class="glyphicon glyphicon-calendar"></i></button>
+		          </span>
+		        </p>
+				
+				<validation-error field="ValidationForm.validateAge" types="required"></validation-error>
+			</div>
+
+			<div class="col-md-12">
+				<label for="validateDoc">Documentación</label>
+				<input name="validateDoc" id="validateDoc" file-model="ValidationForm.validateDocValue" type="file" class="form-control">
+				
+			</div>
+		</div>
+
+		<div class="row form-group">
+			<div class="col-md-4">
+				<button type="submit" ng-click="submitForm()" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Enviar</button>
+			</div>
+		</div>
+
+		<div class="row form-group" ng-show="formErrors">
+			<div class="col-md-4">
+				<span class="alert alert-danger">Por favor, revisa los errores del formulario.</span>
+			</div>
+		</div>
+
+		<ul>
+			<li ng-repeat="user in sync track by user.$id">{{ user.validateNameValue + ' (' + user.$id + ')'  }} 
+				<button class="btn btn-info" ng-click="editUser(user.$id)" type="button"><i class="fa fa-pencil"></i></button>
+				<button class="btn btn-danger" ng-click="removeUser(user.$id)" type="button"><i class="fa fa-times"></i></button>
+			</li>
+		</ul>
+	</form>
+</div>
+</div>
+

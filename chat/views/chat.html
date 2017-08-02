@@ -1,0 +1,18 @@
+<div class="panel panel-info" ng-controller="chatController as ctrl">
+	<div class="panel-heading">
+		<h3>Chat </h3>
+	</div>
+  	<div class="panel-body">
+		<div class="row form-group" ng-repeat="message in ctrl.messages track by message.$id">
+			<div class="col-md-12">
+				<p>{{ message.user }}: {{ message.text }} [{{ ctrl.dateBeautify(message.created_at) | date : 'dd/MM/yyyy H:mm:s' : '+100' }}]</p>	
+			</div>			
+		</div>
+	</div>
+	<div class="panel-footer">
+		<form method="post" action="" ng-submit="ctrl.addMessage()">
+			<input type="text" name="message" ng-model="ctrl.newMessage">
+			<button type="submit">Send</button>
+		</form>
+	</div>
+</div>

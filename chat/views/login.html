@@ -1,0 +1,12 @@
+<div class="panel panel-info" ng-controller="loginController as ctrl">
+	<div class="panel-heading">
+		<h3>Chat </h3>
+	</div>
+  	<div class="panel-body">
+		<form method="post" action="" ng-submit="ctrl.login()">
+			<input type="text" name="user" ng-model="ctrl.username">
+			<button type="submit">Login</button>
+		</form>
+	</div>
+	<div class="panel-footer"></div>
+</div>
